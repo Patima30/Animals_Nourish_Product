@@ -1,0 +1,60 @@
+﻿@page
+@model Animals_Nourish_Product.Pages.Products.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Product.Id_Product" />
+            <div class="form-group">
+                <label asp-for="Product.Name_Product" class="control-label"></label>
+                <input asp-for="Product.Name_Product" class="form-control" />
+                <span asp-validation-for="Product.Name_Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Description_Product" class="control-label"></label>
+                <input asp-for="Product.Description_Product" class="form-control" />
+                <span asp-validation-for="Product.Description_Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Image_Product" class="control-label"></label>
+                <input asp-for="Product.Image_Product" class="form-control" />
+                <span asp-validation-for="Product.Image_Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price_Product" class="control-label"></label>
+                <input asp-for="Product.Price_Product" class="form-control" />
+                <span asp-validation-for="Product.Price_Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Animal_type" class="control-label"></label>
+                <input asp-for="Product.Animal_type" class="form-control" />
+                <span asp-validation-for="Product.Animal_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Food_type" class="control-label"></label>
+                <input asp-for="Product.Food_type" class="form-control" />
+                <span asp-validation-for="Product.Food_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
